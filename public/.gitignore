@@ -1,0 +1,6 @@
+textures/*.jpg
+textures/*.png
+textures/*.jpeg
+
+models/*.json
+interfaces/*.json

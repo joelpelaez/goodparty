@@ -1,0 +1,21 @@
+<?php $this->headTitle($this->translate('Model list')) ?>
+<h1><?= $this->translate('Model list') ?></h1>
+<a href="<?= $this->url('admin/model', ['action' => 'add']) ?>" class="btn btn-success"><?= $this->translate('Add') ?></a>
+<table class="table">
+    <tr>
+        <th><?= $this->translate('Name') ?></th>
+        <th><?= $this->translate('Description') ?></th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($models as $model): ?>
+        <tr>
+            <td><?= $model->name ?></td>
+            <td><?= $model->description ?></td>
+            <td>
+                <a href="<?= $this->url('admin/model', ['action' => 'show', 'id' => $model->id]) ?>" class="btn btn-info"><?= $this->translate('Show') ?></a>
+                <a href="<?= $this->url('admin/model', ['action' => 'edit', 'id' => $model->id]) ?>" class="btn btn-warning"><?= $this->translate('Edit') ?></a>
+                <a href="<?= $this->url('admin/model', ['action' => 'delete', 'id' => $model->id]) ?>" class="btn btn-danger"><?= $this->translate('Delete') ?></a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>

@@ -1,0 +1,52 @@
+<?php
+$title = 'Edit model';
+$this->headTitle($this->translate($title));
+?>
+<h1><?= $this->escapeHtml($this->translate($title)) ?></h1>
+<?php
+$name = $form->get('name');
+$name->setAttribute('class', 'form-control');
+$name->setAttribute('placeholder', 'Name');
+
+$description = $form->get('description');
+$description->setAttribute('class', 'form-control');
+$description->setAttribute('placeholder', 'Description');
+
+$model_url = $form->get('model');
+$model_url->setAttribute('class', 'form-control');
+
+$interface_url = $form->get('interface');
+$interface_url->setAttribute('class', 'form-control');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-default');
+
+$form->setAttribute('action', $this->url('admin/model', ['action' => 'edit', 'id' => $id]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+<div class="form-group">
+    <?= $this->formLabel($name) ?>
+    <?= $this->formElement($name) ?>
+    <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($description) ?>
+    <?= $this->formElement($description) ?>
+    <?= $this->formElementErrors()->render($description, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($model_url) ?>
+    <?= $this->formElement($model_url) ?>
+    <?= $this->formElementErrors()->render($model_url, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($interface_url) ?>
+    <?= $this->formElement($interface_url) ?>
+    <?= $this->formElementErrors()->render($interface_url, ['class' => 'help-block']) ?>
+</div>
+<?
+echo $this->formSubmit($submit);
+echo $this->formHidden($form->get('id'));
+echo $this->form()->closeTag();

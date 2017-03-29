@@ -1,0 +1,16 @@
+<?php  ?>
+
+<table class="table">
+    <tr>
+        <th><?= $this->translate('Name') ?></th>
+        <th><?= $this->translate('Description') ?></th>
+        <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($models as $model): ?>
+        <tr>
+            <td><?= $model->name ?></td>
+            <td><?= $model->description ?></td>
+            <td><a href="<?= $this->url('app/model', ['action' => 'show', 'id' => $model->id]) ?>"><?= $this->translate('Show') ?></a></td>
+        </tr>
+    <?php endforeach; ?>
+</table>

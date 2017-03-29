@@ -1,0 +1,29 @@
+<h1><?= $this->translate('Model') ?>: <?= $model->name ?></h1>
+<div class="row">
+    <div class="col-xs-12 col-sm-8 col-md-8">
+        <div id="glcanvas">
+        </div>
+        <div class="options">
+            <a href="" class="btn btn-success" id="download-preview" download="preview-image.png" onclick="generateImage()"><?= $this->translate('Download Preview') ?></a>
+            <a href="#" class="btn btn-default" id="buy" onclick="buy('<?= $this->url('app/model', ['action' => 'process']) ?>')"><?= $this->translate('Buy') ?></a>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4">
+        <div id="dynamic-controls">
+        </div>
+    </div>
+    <script>
+        setApiUrl("<?= $this->url('api') ?>");
+        setTextureUrl("<?= $this->basePath('textures/') ?>");
+        loadInterfaceByName("<?= $this->basePath('interfaces/' . $model->interface_url) ?>", function() {
+            init("<?= $this->basePath('models/' . $model->model_url) ?>", "<?= $this->basePath('textures/') ?>");
+        });
+    </script>
+</div>
+<?php $this->headScript()
+        ->appendFile($this->basePath('js/three.min.js'))
+        ->appendFile($this->basePath('js/app/models.js'))
+        ->appendFile($this->basePath('js/app/scene.js'))
+        ->appendFile($this->basePath('js/app/init.js'))
+        ->appendFile($this->basePath('js/app/edit-model.js'))
+        ->appendFile($this->basePath('js/app/controls.js')) ?>
