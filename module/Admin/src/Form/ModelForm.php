@@ -8,18 +8,13 @@
 
 namespace Admin\Form;
 
-use DomainException;
 use Zend\Filter\File\RenameUpload;
 use Zend\Filter\StringTrim;
 use Zend\Filter\StripTags;
 use Zend\Filter\ToInt;
 use Zend\Form\Form;
-use Zend\I18n\Validator\IsFloat;
-use Zend\I18n\Validator\IsInt;
 use Zend\InputFilter\FileInput;
 use Zend\InputFilter\InputFilter;
-use Zend\InputFilter\InputFilterAwareInterface;
-use Zend\InputFilter\InputFilterInterface;
 use Zend\Validator\File\MimeType;
 use Zend\Validator\File\UploadFile;
 use Zend\Validator\StringLength;

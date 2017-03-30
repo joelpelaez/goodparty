@@ -6,7 +6,6 @@ use Admin\Form\ModelForm;
 use Database\Entity\Model;
 use Doctrine\ORM\EntityManager;
 use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
 
 /**
  * Item Controller class.
@@ -134,7 +133,7 @@ class ModelController extends AbstractActionController
         // If the model is changed, save the new name and delete old.
         if ($model->model['size'] !== 0 && $model->model['error'] === 0) {
             if (!empty($model->model_url))
-                unlink(getcwd() . '/public/uploads/' . basename($model->model_url));
+                unlink(getcwd() . '/public/models/' . basename($model->model_url));
 
             $model->model_url = basename($model->model['tmp_name']);
         }
@@ -142,12 +141,12 @@ class ModelController extends AbstractActionController
         // If the interface is changed, save the new name and delete old.
         if ($model->interface['size'] !== 0 && $model->interface['error'] === 0) {
             if (!empty($model->interface_url))
-                unlink(getcwd() . '/public/uploads/' . basename($model->interface_url));
+                unlink(getcwd() . '/public/interfaces/' . basename($model->interface_url));
 
             $model->interface_url = basename($model->interface['tmp_name']);
         }
         $this->em->flush();
-
+		
         return $this->redirect()->toRoute('admin/model');
     }
     

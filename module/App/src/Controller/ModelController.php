@@ -4,9 +4,6 @@ namespace App\Controller;
 
 use Database\Entity\Model;
 use Doctrine\ORM\EntityManager;
-use Locale;
-use Zend\EventManager\EventManagerInterface;
-use Zend\I18n\Translator\Translator;
 use Zend\Mvc\Controller\AbstractActionController;
 
 class ModelController extends AbstractActionController
