@@ -3,6 +3,7 @@
 namespace Database\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -17,7 +18,7 @@ class Order {
     public $id;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     public $order_date;
     
@@ -35,6 +36,11 @@ class Order {
      * @ORM\ManyToMany(targetEntity="Change")
      */
     public $changes;
+    
+    public function __construct()
+    {
+        $this->changes = new ArrayCollection();
+    }
     
     public function exchangeArray(array $data)
     {

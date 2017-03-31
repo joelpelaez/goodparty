@@ -1,8 +1,8 @@
 /**
- * setColor: Cambia el color de un elemento dentro de la escena
+ * Cambia el color de un elemento dentro de la escena
  *
- * objectname: nombre del objeto a cambiar de color
- * color: objeto con las propiedades r (rojo), g (verde) y b (azul)
+ * @param objectname nombre del objeto a cambiar de color
+ * @param color objeto con las propiedades r (rojo), g (verde) y b (azul)
  */
 
 function setColor(objectname, color) {

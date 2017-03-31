@@ -37,5 +37,12 @@ class Client
      */
     public $email;
     
-    
+    public function exchangeArray(array $data)
+    {
+        $this->id = !empty($data['id']) ? $data['id'] : null;
+        $this->firstname = !empty($data['firstname']) ? $data['firstname'] : null;
+        $this->lastname = !empty($data['lastname']) ? $data['lastname'] : null;
+        $this->phone = !empty($data['phone']) ? $data['phone'] : null;
+        $this->email = !empty($data['email']) ? $data['email'] : null;
+    }
 }

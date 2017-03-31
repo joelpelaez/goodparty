@@ -23,6 +23,8 @@ function setTextureUrl(url) {
  * En esta implementación solo crea elementos DOM para la modificación de los
  * atributos de los materiales que tiene el modelo (texturas y colores)
  * dependiendo de los detalles que se especifican en el formato.
+ * 
+ * @return none
  */
 function initControls() {
     root_container = $("#dynamic-controls");

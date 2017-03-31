@@ -24,6 +24,10 @@ class Module implements ConfigProviderInterface
                     $em = $container->get(EntityManager::class);
                     return new Controller\CharacterController($em);
                 },
+                Controller\OrderController::class => function($container) {
+                    $em = $container->get(EntityManager::class);
+                    return new Controller\OrderController($em);
+                }
             ]
         ];
     }

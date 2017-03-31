@@ -26,4 +26,11 @@ class Change
      * @ORM\Column(type="string")
      */
     public $element_change;
+    
+    public function exchangeArray(array $data)
+    {
+        $this->id             = !empty($data['id']) ? $data['id'] : null;
+        $this->element_name   = !empty($data['element_name']) ? $data['element_change'] : null;
+        $this->element_change = !empty($data['element_change']) ? $data['element_change'] : null;
+    }
 }
