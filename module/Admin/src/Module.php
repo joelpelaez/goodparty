@@ -3,8 +3,11 @@
 namespace Admin;
 
 use Doctrine\ORM\EntityManager;
+use Zend\Session\SessionManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\ModuleManager;
+use Zend\Mvc\MvcEvent;
+use User\Service\UserManager;
 
 class Module implements ConfigProviderInterface
 {
@@ -20,9 +23,27 @@ class Module implements ConfigProviderInterface
                 Controller\ModelController::class => function($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\ModelController($em);
-                }
-            ]
+                },
+                Controller\UserController::class => function($container) {
+                    $em = $container->get(EntityManager::class);
+                    $um = $container->get(UserManager::class);
+                    return new Controller\UserController($em, $um);
+                },
+            ],
         ];
+    }
+    
+    /**
+     * This method is called once the MVC bootstrapping is complete.
+     */
+    public function onBootstrap(MvcEvent $event)
+    {
+        $application = $event->getApplication();
+        $serviceManager = $application->getServiceManager();
+        
+        // The following line instantiates the SessionManager and automatically
+        // makes the SessionManager the 'default' one.
+        $sessionManager = $serviceManager->get(SessionManager::class);
     }
 
     public function init(ModuleManager $manager)

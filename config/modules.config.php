@@ -30,4 +30,5 @@ return [
     'Admin',
     'Api',
     'App',
+    'User',
 ];

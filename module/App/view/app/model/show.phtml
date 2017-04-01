@@ -5,7 +5,7 @@
         </div>
         <div class="options">
             <a href="" class="btn btn-success" id="download-preview" download="preview-image.png" onclick="generateImage()"><?= $this->translate('Download Preview') ?></a>
-            <a href="#" class="btn btn-default" id="buy" onclick="buy('<?= $this->url('app/model', ['action' => 'process']) ?>')"><?= $this->translate('Buy') ?></a>
+            <a href="#" class="btn btn-default" id="buy" onclick="order()"><?= $this->translate('Buy') ?></a>
         </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -20,10 +20,29 @@
         });
     </script>
 </div>
+<div class="modal fade" id="pedidio" data-model="<?= $model->id ?>">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+    		<div class="modal-header">
+    			<h2 class="modal-title">Procesar pedido</h2>
+    		</div>
+    		<div class="modal-body">
+    			<p>Seleccionar cliente</p>
+    			<select id="client-list" class="form-control">
+    			</select>
+    		</div>
+    		<div class="modal-footer">
+    			<button class="btn btn-success"><?= $this->translate('Continue') ?></button>
+    			<button data-dismiss="modal" class="btn btn-danger"><?= $this->translate('Cancel') ?></button>
+    		</div>
+		</div>
+	</div>
+</div>
 <?php $this->headScript()
         ->appendFile($this->basePath('js/three.min.js'))
         ->appendFile($this->basePath('js/app/models.js'))
         ->appendFile($this->basePath('js/app/scene.js'))
         ->appendFile($this->basePath('js/app/init.js'))
         ->appendFile($this->basePath('js/app/edit-model.js'))
-        ->appendFile($this->basePath('js/app/controls.js')) ?>
+        ->appendFile($this->basePath('js/app/controls.js'))
+        ->appendFile($this->basePath('js/app/order.js')) ?>

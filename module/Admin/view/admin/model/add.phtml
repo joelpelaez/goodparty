@@ -4,16 +4,18 @@ $this->headTitle($this->translate($title));
 ?>
 <h1><?= $this->escapeHtml($this->translate($title)) ?></h1>
 <?php
-$name = $form->get('name');
-$name->setAttribute('class', 'form-control');
-$name->setAttribute('placeholder', 'Name');
+$username = $form->get('name');
+$username->setAttribute('class', 'form-control');
+$username->setAttribute('placeholder', 'Name');
 
-$description = $form->get('description');
-$description->setAttribute('class', 'form-control');
-$description->setAttribute('placeholder', 'Description');
+$fullname = $form->get('description');
+$fullname->setAttribute('class', 'form-control');
+$fullname->setAttribute('placeholder', 'Description');
 
-$model_url = $form->get('model');
-$model_url->setAttribute('class', 'form-control');
+$enabled = $form->get('enabled');
+
+$password = $form->get('model');
+$password->setAttribute('class', 'form-control');
 
 $interface_url = $form->get('interface');
 $interface_url->setAttribute('class', 'form-control');
@@ -27,19 +29,24 @@ $form->prepare();
 echo $this->form()->openTag($form);
 ?>
 <div class="form-group">
-    <?= $this->formLabel($name) ?>
-    <?= $this->formElement($name) ?>
-    <?= $this->formElementErrors()->render($name, ['class' => 'help-block']) ?>
+    <?= $this->formLabel($username) ?>
+    <?= $this->formElement($username) ?>
+    <?= $this->formElementErrors()->render($username, ['class' => 'help-block']) ?>
 </div>
 <div class="form-group">
-    <?= $this->formLabel($description) ?>
-    <?= $this->formElement($description) ?>
-    <?= $this->formElementErrors()->render($description, ['class' => 'help-block']) ?>
+    <?= $this->formLabel($fullname) ?>
+    <?= $this->formElement($fullname) ?>
+    <?= $this->formElementErrors()->render($fullname, ['class' => 'help-block']) ?>
 </div>
 <div class="form-group">
-    <?= $this->formLabel($model_url) ?>
-    <?= $this->formElement($model_url) ?>
-    <?= $this->formElementErrors()->render($model_url, ['class' => 'help-block']) ?>
+    <?= $this->formLabel($enabled) ?>
+    <?= $this->formElement($enabled) ?>
+    <?= $this->formElementErrors()->render($enabled, ['class' => 'help-block']) ?>
+</div>
+<div class="form-group">
+    <?= $this->formLabel($password) ?>
+    <?= $this->formElement($password) ?>
+    <?= $this->formElementErrors()->render($password, ['class' => 'help-block']) ?>
 </div>
 <div class="form-group">
     <?= $this->formLabel($interface_url) ?>

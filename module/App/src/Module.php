@@ -1,13 +1,16 @@
 <?php
-
 namespace App;
 
 use Doctrine\ORM\EntityManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\ModuleManager;
+use Zend\Authentication\AuthenticationService;
+use Admin\Service\UserManager;
+use Zend\Session\SessionManager;
 
 class Module implements ConfigProviderInterface
 {
+
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
@@ -17,11 +20,11 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                Controller\ModelController::class => function($container) {
+                Controller\ModelController::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\ModelController($em);
-                }
-            ]
+                },
+            ],
         ];
     }
 
@@ -29,7 +32,7 @@ class Module implements ConfigProviderInterface
     {
         $events = $manager->getEventManager();
         $sharedEvents = $events->getSharedManager();
-        $sharedEvents->attach(__NAMESPACE__, 'dispatch', function($e) {
+        $sharedEvents->attach(__NAMESPACE__, 'dispatch', function ($e) {
             $controller = $e->getTarget();
             $controller->layout('layout/sales');
         }, 100);

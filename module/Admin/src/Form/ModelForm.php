@@ -56,6 +56,15 @@ class ModelForm extends Form
             ],
         ]);
 
+        $this->add([
+            'name' => 'enabled',
+            'type' => 'checkbox',
+            'options' => [
+                'label' => 'Enabled',
+                'checked_value' => '1',
+                'unchecked_value' => '0',
+            ],
+        ]);
 
         $this->add([
             'name' => 'model',
@@ -133,6 +142,14 @@ class ModelForm extends Form
                         'max' => 120,
                     ],
                 ],
+            ],
+        ]);
+        
+        $inputFilter->add([
+            'name' => 'enabled',
+            'required' => true,
+            'filters' => [
+                ['name' => ToInt::class],
             ],
         ]);
 

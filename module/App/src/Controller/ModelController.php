@@ -18,7 +18,7 @@ class ModelController extends AbstractActionController
 
     public function indexAction()
     {
-        $data = $this->em->getRepository(Model::class)->findAll();
+        $data = $this->em->getRepository(Model::class)->createNamedQuery("activated")->getResult();
         return ['models' => $data];
     }
 

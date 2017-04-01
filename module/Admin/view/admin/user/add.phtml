@@ -1,30 +1,25 @@
 <?php
-$title = 'Edit model';
+$title = 'Add model';
 $this->headTitle($this->translate($title));
 ?>
 <h1><?= $this->escapeHtml($this->translate($title)) ?></h1>
 <?php
-$username = $form->get('name');
+$username = $form->get('username');
 $username->setAttribute('class', 'form-control');
-$username->setAttribute('placeholder', 'Name');
+$username->setAttribute('placeholder', 'Username');
 
-$fullname = $form->get('description');
+$fullname = $form->get('fullname');
 $fullname->setAttribute('class', 'form-control');
-$fullname->setAttribute('placeholder', 'Description');
+$fullname->setAttribute('placeholder', 'Full name');
 
-$enabled = $form->get('enabled');
+$administrator = $form->get('administrator');
 
-$password = $form->get('model');
+$password = $form->get('password');
 $password->setAttribute('class', 'form-control');
-
-$interface_url = $form->get('interface');
-$interface_url->setAttribute('class', 'form-control');
+$password->setAttribute('placeholder', 'Password');
 
 $submit = $form->get('submit');
 $submit->setAttribute('class', 'btn btn-default');
-
-$form->setAttribute('action', $this->url('admin/model', ['action' => 'edit', 'id' => $id]));
-$form->prepare();
 
 echo $this->form()->openTag($form);
 ?>
@@ -39,19 +34,14 @@ echo $this->form()->openTag($form);
     <?= $this->formElementErrors()->render($fullname, ['class' => 'help-block']) ?>
 </div>
 <div class="form-group">
-    <?= $this->formLabel($enabled) ?>
-    <?= $this->formElement($enabled) ?>
-    <?= $this->formElementErrors()->render($enabled, ['class' => 'help-block']) ?>
-</div>
-<div class="form-group">
     <?= $this->formLabel($password) ?>
     <?= $this->formElement($password) ?>
     <?= $this->formElementErrors()->render($password, ['class' => 'help-block']) ?>
 </div>
 <div class="form-group">
-    <?= $this->formLabel($interface_url) ?>
-    <?= $this->formElement($interface_url) ?>
-    <?= $this->formElementErrors()->render($interface_url, ['class' => 'help-block']) ?>
+    <?= $this->formLabel($administrator) ?>
+    <?= $this->formElement($administrator) ?>
+    <?= $this->formElementErrors()->render($administrator, ['class' => 'help-block']) ?>
 </div>
 <?
 echo $this->formSubmit($submit);

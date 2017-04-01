@@ -1,0 +1,29 @@
+<?php $this->headTitle($this->translate('Users list')) ?>
+<h1><?= $this->translate('Users list') ?></h1>
+<p>
+	<a href="<?= $this->url('admin/user', ['action' => 'add']) ?>" class="btn btn-success"><?= $this->translate('Add') ?></a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th><?= $this->translate('Username') ?></th>
+			<th><?= $this->translate('Full name') ?></th>
+			<th><?= $this->translate('Administrator')?></th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($users as $user) : ?>
+		<tr>
+			<td><?= $this->escapeHtml($user->username) ?></td>
+			<td><?= $this->escapeHtml($user->fullname) ?></td>
+			<td><?= $user->administrator ? $this->translate('Yes') : $this->translate('No') ?></td>
+			<td>
+				<a class="btn btn-info" href="<?= $this->url('admin/user', ['action' => 'show', 'id' => $user->id]) ?>"><?= $this->translate('Show') ?></a>
+				<a class="btn btn-warning" href="<?= $this->url('admin/user', ['action' => 'edit', 'id' => $user->id]) ?>"><?= $this->translate('Edit') ?></a>
+				<a class="btn btn-danger" href="<?= $this->url('admin/user', ['action' => 'delete', 'id' => $user->id]) ?>"><?= $this->translate('Delete') ?></a>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

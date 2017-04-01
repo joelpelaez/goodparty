@@ -52,6 +52,18 @@ return [
                                 'controller' => Controller\OrderController::class,
                             ],
                         ],
+                    ],
+                    'client' => [
+                        'type'    => Segment::class,
+                        'options' => [
+                            'route'    => '/client[/:id][/]',
+                            'constraints' => [
+                                'id' => '[0-9]+',
+                            ],
+                            'defaults' => [
+                                'controller' => Controller\ClientController::class,
+                            ],
+                        ],
                     ]
                 ],
             ],

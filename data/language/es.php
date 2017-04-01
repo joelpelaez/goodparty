@@ -18,4 +18,5 @@ return [
     'Model list' => 'Lista de modelos',
     'Add model' => 'Añadir modelo',
     'Edit model' => 'Editar modelo',
+    'Enabled' => 'Activado',
 ];
