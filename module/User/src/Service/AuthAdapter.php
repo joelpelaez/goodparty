@@ -35,6 +35,11 @@ class AuthAdapter implements AdapterInterface
     private $entityManager;
     
     /**
+     * Administrator role
+     */
+    private $administrator;
+    
+    /**
      * Constructor.
      */
     public function __construct(EntityManager $entityManager)
@@ -59,6 +64,14 @@ class AuthAdapter implements AdapterInterface
     }
     
     /**
+     * Get if it's a administrator
+     */
+    public function isAdministrator()
+    {
+        return $this->administrator;
+    }
+    
+    /**
      * Performs an authentication attempt.
      */
     public function authenticate()
@@ -74,6 +87,9 @@ class AuthAdapter implements AdapterInterface
                 null,
                 ['Invalid credentials.']);
         }
+        
+        // Check if the user is a administrator
+        $this->administrator = ($user->administrator === 1);
         
         // Now we need to calculate hash based on user-entered password and compare
         // it with the password hash stored in database.

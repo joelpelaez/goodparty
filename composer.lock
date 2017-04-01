@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "64df6744949017bbfe17ad6c849e52ff",
+    "hash": "1a897129bfee9f90ecfd9c999bc7bcdc",
+    "content-hash": "f5cf3c0708965d2503e774e9fe7cfed0",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -35,7 +36,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14T19:40:03+00:00"
+            "time": "2017-02-14 19:40:03"
         },
         {
             "name": "doctrine/annotations",
@@ -103,7 +104,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2017-02-24T16:22:25+00:00"
+            "time": "2017-02-24 16:22:25"
         },
         {
             "name": "doctrine/cache",
@@ -173,7 +174,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "doctrine/collections",
@@ -240,7 +241,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2017-01-03T10:49:41+00:00"
+            "time": "2017-01-03 10:49:41"
         },
         {
             "name": "doctrine/common",
@@ -313,7 +314,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-01-13T14:02:13+00:00"
+            "time": "2017-01-13 14:02:13"
         },
         {
             "name": "doctrine/dbal",
@@ -384,7 +385,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-02-08T12:53:47+00:00"
+            "time": "2017-02-08 12:53:47"
         },
         {
             "name": "doctrine/doctrine-module",
@@ -476,7 +477,7 @@
                 "module",
                 "zf"
             ],
-            "time": "2016-10-03T19:40:55+00:00"
+            "time": "2016-10-03 19:40:55"
         },
         {
             "name": "doctrine/doctrine-orm-module",
@@ -564,7 +565,7 @@
                 "orm",
                 "zf"
             ],
-            "time": "2017-01-17T17:45:54+00:00"
+            "time": "2017-01-17 17:45:54"
         },
         {
             "name": "doctrine/inflector",
@@ -631,7 +632,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06T14:35:42+00:00"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -685,7 +686,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14T21:17:01+00:00"
+            "time": "2015-06-14 21:17:01"
         },
         {
             "name": "doctrine/lexer",
@@ -739,7 +740,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09T13:34:57+00:00"
+            "time": "2014-09-09 13:34:57"
         },
         {
             "name": "doctrine/orm",
@@ -815,7 +816,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-12-18T15:42:34+00:00"
+            "time": "2016-12-18 15:42:34"
         },
         {
             "name": "paragonie/random_compat",
@@ -863,7 +864,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2017-03-13T16:27:32+00:00"
+            "time": "2017-03-13 16:27:32"
         },
         {
             "name": "psr/container",
@@ -912,7 +913,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/log",
@@ -959,7 +960,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "symfony/console",
@@ -1022,7 +1023,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2017-03-06T19:30:27+00:00"
+            "time": "2017-03-06 19:30:27"
         },
         {
             "name": "symfony/debug",
@@ -1079,7 +1080,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-02-18T17:28:00+00:00"
+            "time": "2017-02-18 17:28:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1138,7 +1139,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14T01:06:16+00:00"
+            "time": "2016-11-14 01:06:16"
         },
         {
             "name": "zendframework/zend-authentication",
@@ -1200,7 +1201,7 @@
                 "Authentication",
                 "zf2"
             ],
-            "time": "2016-02-28T15:02:34+00:00"
+            "time": "2016-02-28 15:02:34"
         },
         {
             "name": "zendframework/zend-cache",
@@ -1269,7 +1270,7 @@
                 "cache",
                 "zf2"
             ],
-            "time": "2016-12-16T11:35:47+00:00"
+            "time": "2016-12-16 11:35:47"
         },
         {
             "name": "zendframework/zend-code",
@@ -1322,7 +1323,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2016-10-24T13:23:32+00:00"
+            "time": "2016-10-24 13:23:32"
         },
         {
             "name": "zendframework/zend-component-installer",
@@ -1366,7 +1367,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Composer plugin for automating component registration in zend-mvc and Expressive applications",
-            "time": "2017-02-22T17:44:09+00:00"
+            "time": "2017-02-22 17:44:09"
         },
         {
             "name": "zendframework/zend-config",
@@ -1422,7 +1423,7 @@
                 "config",
                 "zf2"
             ],
-            "time": "2016-02-04T23:01:10+00:00"
+            "time": "2016-02-04 23:01:10"
         },
         {
             "name": "zendframework/zend-crypt",
@@ -1473,7 +1474,7 @@
                 "crypt",
                 "zf2"
             ],
-            "time": "2016-12-06T15:33:37+00:00"
+            "time": "2016-12-06 15:33:37"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -1517,7 +1518,7 @@
                 "escaper",
                 "zf2"
             ],
-            "time": "2016-06-30T19:48:38+00:00"
+            "time": "2016-06-30 19:48:38"
         },
         {
             "name": "zendframework/zend-eventmanager",
@@ -1571,7 +1572,7 @@
                 "events",
                 "zf2"
             ],
-            "time": "2016-12-19T21:47:12+00:00"
+            "time": "2016-12-19 21:47:12"
         },
         {
             "name": "zendframework/zend-filter",
@@ -1631,7 +1632,7 @@
                 "filter",
                 "zf2"
             ],
-            "time": "2016-04-18T18:32:43+00:00"
+            "time": "2016-04-18 18:32:43"
         },
         {
             "name": "zendframework/zend-form",
@@ -1708,7 +1709,7 @@
                 "form",
                 "zf2"
             ],
-            "time": "2017-02-23T16:03:25+00:00"
+            "time": "2017-02-23 16:03:25"
         },
         {
             "name": "zendframework/zend-http",
@@ -1758,7 +1759,7 @@
                 "http",
                 "zf2"
             ],
-            "time": "2017-01-31T14:41:02+00:00"
+            "time": "2017-01-31 14:41:02"
         },
         {
             "name": "zendframework/zend-hydrator",
@@ -1820,7 +1821,7 @@
                 "hydrator",
                 "zf2"
             ],
-            "time": "2016-04-18T17:59:29+00:00"
+            "time": "2016-04-18 17:59:29"
         },
         {
             "name": "zendframework/zend-i18n",
@@ -1887,7 +1888,7 @@
                 "i18n",
                 "zf2"
             ],
-            "time": "2016-06-07T21:08:30+00:00"
+            "time": "2016-06-07 21:08:30"
         },
         {
             "name": "zendframework/zend-inputfilter",
@@ -1942,7 +1943,7 @@
                 "inputfilter",
                 "zf2"
             ],
-            "time": "2016-08-18T18:40:34+00:00"
+            "time": "2016-08-18 18:40:34"
         },
         {
             "name": "zendframework/zend-json",
@@ -1992,7 +1993,7 @@
                 "json",
                 "zf2"
             ],
-            "time": "2016-04-01T02:34:00+00:00"
+            "time": "2016-04-01 02:34:00"
         },
         {
             "name": "zendframework/zend-loader",
@@ -2036,7 +2037,7 @@
                 "loader",
                 "zf2"
             ],
-            "time": "2015-06-03T14:05:47+00:00"
+            "time": "2015-06-03 14:05:47"
         },
         {
             "name": "zendframework/zend-log",
@@ -2107,7 +2108,7 @@
                 "logging",
                 "zf2"
             ],
-            "time": "2016-08-11T13:44:10+00:00"
+            "time": "2016-08-11 13:44:10"
         },
         {
             "name": "zendframework/zend-math",
@@ -2157,7 +2158,7 @@
                 "math",
                 "zf2"
             ],
-            "time": "2016-04-28T17:37:42+00:00"
+            "time": "2016-04-28 17:37:42"
         },
         {
             "name": "zendframework/zend-modulemanager",
@@ -2216,7 +2217,7 @@
                 "modulemanager",
                 "zf2"
             ],
-            "time": "2016-05-16T21:21:11+00:00"
+            "time": "2016-05-16 21:21:11"
         },
         {
             "name": "zendframework/zend-mvc",
@@ -2281,7 +2282,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-12-20T15:33:49+00:00"
+            "time": "2016-12-20 15:33:49"
         },
         {
             "name": "zendframework/zend-mvc-form",
@@ -2323,7 +2324,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-06-07T18:34:07+00:00"
+            "time": "2016-06-07 18:34:07"
         },
         {
             "name": "zendframework/zend-mvc-i18n",
@@ -2384,7 +2385,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-05-31T21:27:06+00:00"
+            "time": "2016-05-31 21:27:06"
         },
         {
             "name": "zendframework/zend-mvc-plugin-fileprg",
@@ -2440,7 +2441,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-05-31T20:44:35+00:00"
+            "time": "2016-05-31 20:44:35"
         },
         {
             "name": "zendframework/zend-mvc-plugin-flashmessenger",
@@ -2492,7 +2493,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-05-31T21:13:07+00:00"
+            "time": "2016-05-31 21:13:07"
         },
         {
             "name": "zendframework/zend-mvc-plugin-identity",
@@ -2545,7 +2546,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-05-31T21:19:45+00:00"
+            "time": "2016-05-31 21:19:45"
         },
         {
             "name": "zendframework/zend-mvc-plugin-prg",
@@ -2597,7 +2598,7 @@
                 "mvc",
                 "zf2"
             ],
-            "time": "2016-05-31T21:23:05+00:00"
+            "time": "2016-05-31 21:23:05"
         },
         {
             "name": "zendframework/zend-mvc-plugins",
@@ -2645,7 +2646,7 @@
                 "plugins",
                 "zf2"
             ],
-            "time": "2016-06-02T18:41:26+00:00"
+            "time": "2016-06-02 18:41:26"
         },
         {
             "name": "zendframework/zend-paginator",
@@ -2709,7 +2710,52 @@
                 "paginator",
                 "zf2"
             ],
-            "time": "2016-04-11T21:18:13+00:00"
+            "time": "2016-04-11 21:18:13"
+        },
+        {
+            "name": "zendframework/zend-permissions-rbac",
+            "version": "2.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/zend-permissions-rbac.git",
+                "reference": "4213a4889ae7d7607c7974124965d12d1c395115"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/zend-permissions-rbac/zipball/4213a4889ae7d7607c7974124965d12d1c395115",
+                "reference": "4213a4889ae7d7607c7974124965d12d1c395115",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.23"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "1.7.*",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev",
+                    "dev-develop": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zend\\Permissions\\Rbac\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides a role-based access control management",
+            "homepage": "https://github.com/zendframework/zend-permissions-rbac",
+            "keywords": [
+                "rbac",
+                "zf2"
+            ],
+            "time": "2015-06-03 14:05:54"
         },
         {
             "name": "zendframework/zend-router",
@@ -2770,7 +2816,7 @@
                 "routing",
                 "zf2"
             ],
-            "time": "2016-05-31T20:47:48+00:00"
+            "time": "2016-05-31 20:47:48"
         },
         {
             "name": "zendframework/zend-servicemanager",
@@ -2833,7 +2879,7 @@
                 "servicemanager",
                 "zf"
             ],
-            "time": "2017-03-01T22:08:02+00:00"
+            "time": "2017-03-01 22:08:02"
         },
         {
             "name": "zendframework/zend-session",
@@ -2899,7 +2945,7 @@
                 "session",
                 "zf2"
             ],
-            "time": "2016-07-05T18:32:50+00:00"
+            "time": "2016-07-05 18:32:50"
         },
         {
             "name": "zendframework/zend-stdlib",
@@ -2944,7 +2990,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2016-09-13T14:38:50+00:00"
+            "time": "2016-09-13 14:38:50"
         },
         {
             "name": "zendframework/zend-uri",
@@ -2991,7 +3037,7 @@
                 "uri",
                 "zf2"
             ],
-            "time": "2016-02-17T22:38:51+00:00"
+            "time": "2016-02-17 22:38:51"
         },
         {
             "name": "zendframework/zend-validator",
@@ -3062,7 +3108,7 @@
                 "validator",
                 "zf2"
             ],
-            "time": "2017-03-17T10:15:50+00:00"
+            "time": "2017-03-17 10:15:50"
         },
         {
             "name": "zendframework/zend-view",
@@ -3149,7 +3195,7 @@
                 "view",
                 "zf2"
             ],
-            "time": "2017-03-21T15:05:56+00:00"
+            "time": "2017-03-21 15:05:56"
         },
         {
             "name": "zfcampus/zf-development-mode",
@@ -3198,7 +3244,7 @@
                 "framework",
                 "zf2"
             ],
-            "time": "2017-01-09T23:34:49+00:00"
+            "time": "2017-01-09 23:34:49"
         }
     ],
     "packages-dev": [],

@@ -1,5 +1,5 @@
 <?php
-$this->headTitle('Sign in');
+$this->headTitle($this->translate('Sign in'));
 
 
 $form->get('username')->setAttributes([
@@ -25,11 +25,15 @@ $form->get('password')->setAttributes([
 <div class="row">
     <div class="col-md-offset-4 col-md-3">
         <form class="form-signin" method="post">
-            <h2 class="form-signin-heading">Please sign in</h2>
+            <h2 class="form-signin-heading"><?= $this->translate('Please sign in') ?></h2>
             <?php if ($isLoginError): ?>
             <div class="alert alert-warning" role="alert">
-                Incorrect login and/or password. 
-                
+                <?= $this->translate('Incorrect login and/or password.') ?> 
+            </div>
+            <?php endif; ?>
+            <?php if ($isUserLogged): ?>
+            <div class="alert alert-warning" role="alert">
+                <?= $this->translate('Already logged in.') ?> 
             </div>
             <?php endif; ?>
             <?= $this->formLabel($form->get('username')); ?>
@@ -38,7 +42,7 @@ $form->get('password')->setAttributes([
             <?= $this->formElement($form->get('password')); ?>
             <div class="checkbox">
                 <label>
-                    <?= $this->formElement($form->get('remember_me')); ?> Remember me
+                    <?= $this->formElement($form->get('remember_me')); ?><?= $this->translate('Remember me') ?>
                 </label>
             </div>
             <?= $this->formElement($form->get('redirect_url')); ?>

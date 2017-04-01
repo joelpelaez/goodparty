@@ -37,4 +37,15 @@ class UserManager
         }
         return false;
     }
+    
+    /**
+     * Checks whether an active user with given email address already exists in the database.
+     */
+    public function checkUserExists($email) {
+        
+        $user = $this->entityManager->getRepository(User::class)
+        ->findOneByEmail($email);
+        
+        return $user !== null;
+    }
 }

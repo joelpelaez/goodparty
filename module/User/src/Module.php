@@ -5,6 +5,7 @@ use Doctrine\ORM\EntityManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Authentication\AuthenticationService;
 use Zend\Session\SessionManager;
+use Zend\Permissions\Rbac\Rbac;
 
 class Module implements ConfigProviderInterface
 {
@@ -40,14 +41,21 @@ class Module implements ConfigProviderInterface
                 Service\AuthManager::class => function ($container) {
                     $authService = $container->get(AuthenticationService::class);
                     $sessionManager = $container->get(SessionManager::class);
-                    return new Service\AuthManager($authService, $sessionManager);
+                    // Get contents of 'access_filter' config key (the AuthManager service
+                    // will use this data to determine whether to allow currently logged in user
+                    // to execute the controller action or not.
+                    $config = $container->get('Config');
+                    if (isset($config['access_filter']))
+                        $config = $config['access_filter'];
+                    else
+                        $config = [];
+                    return new Service\AuthManager($authService, $sessionManager, $config);
                 },
-                Service\UserManager::class => function($container) {
+                Service\UserManager::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Service\UserManager($em);
-                },
+                }
             ]
         ];
     }
-
 }

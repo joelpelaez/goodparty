@@ -19,4 +19,15 @@ return [
     'Add model' => 'Añadir modelo',
     'Edit model' => 'Editar modelo',
     'Enabled' => 'Activado',
+    'Administrator' => 'Administrador',
+    'Full name' => 'Nombre completo',
+    // Login
+    'Please sign in' => 'Inicie sesión',
+    'Username' => 'Usuario',
+    'Password' => 'Contraseña',
+    'Remember me' => 'Recordarme',
+    // User module
+    'Incorrect login and/or password.' => 'Usuario y/o contraseña incorrecta.',
+    'Sign in' => 'Inicio de sesión',
+    'Already logged in.' => 'Su sesión está iniciada',
 ];

@@ -71,6 +71,7 @@ class AuthController extends AbstractActionController
         
         // Store login status.
         $isLoginError = false;
+        $isUserLogged = false;
         
         // Check if user has submitted the form
         if ($this->getRequest()->isPost()) {
@@ -91,7 +92,10 @@ class AuthController extends AbstractActionController
                         $data['password'], $data['remember_me']);
                 
                 // Check result.
-                if ($result->getCode() == Result::SUCCESS) {
+                if ($result === false) {
+                    $isUserLogged = true;
+                } 
+                else if ($result->getCode() == Result::SUCCESS) {
                     
                     // Get redirect URL.
                     $redirectUrl = $this->params()->fromPost('redirect_url', '');
@@ -113,7 +117,7 @@ class AuthController extends AbstractActionController
                     }
                 } else {
                     $isLoginError = true;
-                }                
+                }
             } else {
                 $isLoginError = true;
             }           
@@ -122,6 +126,7 @@ class AuthController extends AbstractActionController
         return new ViewModel([
             'form' => $form,
             'isLoginError' => $isLoginError,
+            'isUserLogged' => $isUserLogged,
             'redirectUrl' => $redirectUrl
         ]);
     }
