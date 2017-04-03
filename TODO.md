@@ -2,11 +2,7 @@
 
 This is a TODO list for the feature/zend-mvc-v3-minimal branch.
 
-## Documentation
+## Modules
 
-- ModuleRouteListener is removed from the skeleton. This won't affect existing
-  users, but *will* affect experienced users who originally relied on it being
-  active in new skeleton projects.
-- The `/[:controller][/:action]]` route was removed from the skeleton. Again, it
-  will not affect existing users, but *will* affect experienced users who
-  originally relied on it being active in new skeleton projects.
+- Add Color entity to limit options in customization.
+- Change home page.
