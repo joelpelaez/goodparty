@@ -3,6 +3,9 @@ var controllers = {};
 // Control activo
 var active_controller = undefined;
 
+// Changes
+var changes = {};
+
 // URL
 var base_url = undefined;
 var texture_url = undefined;
@@ -47,13 +50,13 @@ function initControls() {
         // Crear un color picker si el objeto permite cambio de color.
         if (objnode["color_editable"] !== undefined &&
             objnode["color_editable"] === true) {
-            createColorPicker(obj, container);
+            createColorPicker(obj, objnode['show_name'], container);
             container.addClass('color-picker');
         }
         // Crear una selección de personajes si el objeto permite cambio de textura.
         if (objnode["texture_editable"] !== undefined &&
             objnode["texture_editable"] === true) {
-            createTexturePicker(obj, container);
+            createTexturePicker(obj, objnode['show_name'], container);
             container.addClass('character-picker');
         }
         // Añadir el elemento a la lista.
@@ -65,15 +68,18 @@ function initControls() {
  * Crear un nuevo selecionador de color. Por defecto crea un input color.
  * Se enlazará con el objeto utilizando un evento.
  */
-function createColorPicker(obj, container) {
+function createColorPicker(obj, name, container) {
     var o = $("<input/>");
     o.attr('type', 'color');
     o.attr('name', 'picker-' + obj.name);
-    o.on('input', function(obj, o) {
+    o.on('input', function(obj, o, name) {
         return function(event) {
+        	changes[name] = {};
+        	changes[name].type = 'Color';
+        	changes[name].value = o.val();
             colorHelper(obj, o);
         }
-    }(obj, o));
+    }(obj, o, name));
     container.append("Color: <br>");
     container.append(o);
     container.append("<br>");
@@ -83,7 +89,7 @@ function createColorPicker(obj, container) {
  * Crear un nuevo selecionador de textura. Por defecto crea un img.
  * Se enlazará con el objeto utilizando un evento.
  */
-function createTexturePicker(obj, container) {
+function createTexturePicker(obj, objname, container) {
     var o = $("<div/>");
     o.attr('data-name', 'texture-' + obj.name);
     container.append(o);
@@ -101,11 +107,14 @@ function createTexturePicker(obj, container) {
             var img = $('<img>');
             img.attr('src', url);
             img.addClass('texture-image');
-            img.on('click', (function(obj, url) {
+            img.on('click', (function(obj, url, image, name) {
                 return function(event) {
+                	changes[name] = {};
+                	changes[name].type = 'Personaje';
+                	changes[name].value = image.name;
                     textureHelper(obj, url);
                 }
-            }(obj, url)));
+            }(obj, url, data[texture], objname)));
             img.on('dragstart', (function(url, img) {
                 return function(event) {
                     event.originalEvent.dataTransfer.setData("text", url);

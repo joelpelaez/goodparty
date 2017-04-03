@@ -5,7 +5,6 @@ use Doctrine\ORM\EntityManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Authentication\AuthenticationService;
 use Zend\Session\SessionManager;
-use Zend\Permissions\Rbac\Rbac;
 
 class Module implements ConfigProviderInterface
 {

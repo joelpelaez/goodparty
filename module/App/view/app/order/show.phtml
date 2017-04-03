@@ -1,0 +1,42 @@
+<?php
+$title = $this->translate('Show order');
+
+$this->headTitle($title);
+
+?>
+<h1><?= $title ?></h1>
+<p>
+	<?= $this->translate('Information about order nº ') . $order->id ?>
+<p>
+<h2><?= $this->translate('Client') ?></h2>
+<p>
+	<?= $this->translate('Firstname') . ': ' . $order->client->firstname ?>
+	<br>
+	<?= $this->translate('Lastname') . ': ' . $order->client->lastname ?>
+	<br>
+	<?= $this->translate('Email') . ': ' . (!empty($order->client->email) ? $order->client->email : $this->translate('None')) ?>
+	<br>
+	<?= $this->translate('Phone') . ': ' . (!empty($order->client->phone) ? $order->client->phone : $this->translate('None')) ?>
+</p>
+<h2><?= $this->translate('Model') ?></h2>
+<p>
+	<?= $this->translate('Name') . ': ' . $order->model->name ?>
+	<br>
+	<a href="<?= $this->url('model', ['action' => 'show', 'id' => $order->model->id]) ?>" class="btn btn-info"><?= $this->translate('Show') ?></a>
+</p>
+<h2><?= $this->translate('Changes') ?></h2>
+<table class="table">
+	<thead>
+		<tr>
+			<th><?= $this->translate('Part') ?></th>
+			<th><?= $this->translate('Change') ?></th>
+	</thead>
+	<tbody>
+		<?php foreach ($order->changes as $change): ?>
+		<tr>
+			<td><?= $this->escapeHtml($change->element_name) ?></td>
+			<td><?= $this->escapeHtml($change->element_change) ?></td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

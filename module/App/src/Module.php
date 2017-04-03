@@ -2,12 +2,12 @@
 namespace App;
 
 use Doctrine\ORM\EntityManager;
+use User\Controller\AuthController;
+use User\Service\AuthManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\ModuleManager;
-use User\Controller\AuthController;
-use Zend\Mvc\MvcEvent;
-use User\Service\AuthManager;
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Mvc\MvcEvent;
 
 class Module implements ConfigProviderInterface
 {
@@ -25,7 +25,11 @@ class Module implements ConfigProviderInterface
                     $em = $container->get(EntityManager::class);
                     return new Controller\ModelController($em);
                 },
-            ],
+                Controller\OrderController::class => function ($container) {
+                    $em = $container->get(EntityManager::class);
+                    return new Controller\OrderController($em);
+                }
+            ]
         ];
     }
 
@@ -38,12 +42,13 @@ class Module implements ConfigProviderInterface
             $controller->layout('layout/sales');
         }, 100);
     }
-    
+
     /**
      * This method is called once the MVC bootstrapping is complete.
      */
     public function onBootstrap(MvcEvent $event)
     {
+        \Locale::setDefault("es");
         // Get event manager.
         $eventManager = $event->getApplication()->getEventManager();
         $sharedEventManager = $eventManager->getSharedManager();
@@ -53,7 +58,7 @@ class Module implements ConfigProviderInterface
             'onDispatch'
         ], 99);
     }
-    
+
     /**
      * Event listener method for the 'Dispatch' event.
      * We listen to the Dispatch
@@ -74,8 +79,8 @@ class Module implements ConfigProviderInterface
         
         // Get the instance of AuthManager service.
         $authManager = $event->getApplication()
-        ->getServiceManager()
-        ->get(AuthManager::class);
+            ->getServiceManager()
+            ->get(AuthManager::class);
         
         // Execute the access filter on every controller except AuthController
         // (to avoid infinite redirect).
@@ -84,14 +89,14 @@ class Module implements ConfigProviderInterface
             // Remember the URL of the page the user tried to access. We will
             // redirect the user to that URL after successful login.
             $uri = $event->getApplication()
-            ->getRequest()
-            ->getUri();
+                ->getRequest()
+                ->getUri();
             // Make the URL relative (remove scheme, user info, host name and port)
             // to avoid redirecting to other domain by a malicious user.
             $uri->setScheme(null)
-            ->setHost(null)
-            ->setPort(null)
-            ->setUserInfo(null);
+                ->setHost(null)
+                ->setPort(null)
+                ->setUserInfo(null);
             $redirectUrl = $uri->toString();
             
             // Redirect the user to the "Login" page.

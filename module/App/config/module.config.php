@@ -7,30 +7,32 @@ use Zend\Router\Http\Segment;
 return [
     'router' => [
         'routes' => [
-            'app' => [
+            'model' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route' => '/app',
+                    'route' => '/model[/:action[/:id]]',
                     'constraints' => [
+                        'action' => '[a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
                     ],
                     'defaults' => [
+                        'controller' => Controller\ModelController::class,
+                        'action' => 'index',
                     ]
                 ],
-                'child_routes' => [
-                    'model' => [
-                        'type'    => Segment::class,
-                        'options' => [
-                            'route' => '/model[/:action[/:id]]',
-                            'constraints' => [
-                                'action' => '[a-zA-Z0-9_-]*',
-                                'id'     => '[0-9]+',
-                            ],
-                            'defaults' => [
-                                'controller' => Controller\ModelController::class,
-                                'action' => 'index',
-                            ]
-                        ],
+            ],
+            'order' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route' => '/order[/:action[/:id]]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+',
                     ],
+                    'defaults' => [
+                        'controller' => Controller\OrderController::class,
+                        'action' => 'index',
+                    ]
                 ],
             ],
         ]

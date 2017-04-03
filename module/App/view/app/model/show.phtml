@@ -5,7 +5,7 @@
         </div>
         <div class="options">
             <a href="" class="btn btn-success" id="download-preview" download="preview-image.png" onclick="generateImage()"><?= $this->translate('Download Preview') ?></a>
-            <a href="#" class="btn btn-default" id="buy" onclick="order()"><?= $this->translate('Buy') ?></a>
+            <a href="#" class="btn btn-default" id="buy" onclick="order()"><?= $this->translate('Order') ?></a>
         </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">
@@ -13,6 +13,7 @@
         </div>
     </div>
     <script>
+    	setOrderUrl("<?= $this->url('order') ?>");
         setApiUrl("<?= $this->url('api') ?>");
         setTextureUrl("<?= $this->basePath('textures/') ?>");
         loadInterfaceByName("<?= $this->basePath('interfaces/' . $model->interface_url) ?>", function() {
@@ -24,15 +25,49 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
     		<div class="modal-header">
-    			<h2 class="modal-title">Procesar pedido</h2>
+    			<h2 class="modal-title"><?= $this->translate('Order process') ?></h2>
     		</div>
     		<div class="modal-body">
-    			<p>Seleccionar cliente</p>
-    			<select id="client-list" class="form-control">
-    			</select>
+    			<div>
+    				<h3><?= $this->translate('Select a client') ?></h3>
+    				<input type="hidden" name="model-id" id="model-id" value="<?= $model->id ?>">
+        			<select id="client-list" class="form-control">
+        			</select>
+        			<hr>
+        			<h3><a href="#" onclick="show_add_client()"><?= $this->translate('Or create a new client') ?></a></h3>
+        			<div id="add-client-form">
+        				<form>
+        					<label for="firstname" class="sr-only"><?= $this->translate('Firstname') ?></label>
+        					<input name="firstname" id="firstname" type="text" class="form-control" placeholder="<?= $this->translate('Firstname') ?>">
+        					<br>
+        					<label for="lastname" class="sr-only"><?= $this->translate('Lastname') ?></label>
+        					<input name="lastname" id="lastname" type="text" class="form-control" placeholder="<?= $this->translate('Lastname') ?>">
+        					<br>
+        					<label for="email" class="sr-only"><?= $this->translate('First name') ?></label>
+        					<input name="email" id="email" type="email" class="form-control" placeholder="<?= $this->translate('Email') ?>">
+        					<br>
+        					<label for="phone" class="sr-only"><?= $this->translate('First name') ?></label>
+        					<input name="phone" id="phone" type="text" class="form-control" placeholder="<?= $this->translate('Phone') ?>">
+        					<br>
+        					<input type="submit" class="btn btn-success" value="<?= $this->translate('Add client') ?>">
+        				</form>
+        			</div>
+    			</div>
+    			<div>
+    				<h3><?= $this->translate('Order summary') ?></h3>
+    				<p><?= $this->translate('Model') ?>: <?= $model->name ?></p>
+    				<table class="table" id="change-table">
+    					<tr>
+    						<th><?= $this->translate('Part') ?></th>
+    						<th><?= $this->translate('Customize') ?></th>
+    						<th>&nbsp;</th>
+    					</tr>
+    					
+    				</table>
+    			</div>
     		</div>
     		<div class="modal-footer">
-    			<button class="btn btn-success"><?= $this->translate('Continue') ?></button>
+    			<button class="btn btn-success" onclick="add_order()"><?= $this->translate('Continue') ?></button>
     			<button data-dismiss="modal" class="btn btn-danger"><?= $this->translate('Cancel') ?></button>
     		</div>
 		</div>

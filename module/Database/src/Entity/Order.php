@@ -8,6 +8,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(name="orders")
+ * @ORM\NamedQueries({
+ *     @ORM\NamedQuery(name="list", query="SELECT PARTIAL u.{id, order_date, client, model} FROM __CLASS__ u") 
+ * })
  */
 class Order {
     /**

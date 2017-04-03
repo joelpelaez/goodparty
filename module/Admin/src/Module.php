@@ -2,14 +2,11 @@
 namespace Admin;
 
 use Doctrine\ORM\EntityManager;
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\Session\SessionManager;
+use User\Service\UserManager;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\ModuleManager;
 use Zend\Mvc\MvcEvent;
-use User\Controller\AuthController;
-use User\Service\AuthManager;
-use User\Service\UserManager;
+use Zend\Session\SessionManager;
 
 class Module implements ConfigProviderInterface
 {

@@ -1,2 +1,27 @@
 <?php $this->headTitle($this->translate('Order list')); ?>
+<h1><?= $this->translate('Order list') ?></h1>
 
+<table class="table">
+	<thead>
+		<tr>
+			<th><?= $this->translate('Number') ?></th>
+			<th><?= $this->translate('Client') ?></th>
+			<th><?= $this->translate('Model') ?></th>
+			<th><?= $this->translate('Date') ?></th>
+			<th>&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach ($orders as $order): ?>
+		<tr>
+			<td><?= $this->escapeHtml($order->id) ?></td>
+			<td><?= $this->escapeHtml($order->client->firstname . ' ' . $order->client->lastname) ?></td>
+			<td><?= $this->escapeHtml($order->model->name) ?></td>
+			<td><?= $this->dateFormat($order->order_date, IntlDateFormatter::FULL, IntlDateFormatter::NONE) ?></td>
+			<td>
+				<a class="btn btn-info" href="<?= $this->url('order', ['action' => 'show', 'id' => $order->id]) ?>">Show</a>
+			</td>
+		</tr>
+		<?php endforeach; ?>
+	</tbody>
+</table>

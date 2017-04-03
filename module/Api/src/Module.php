@@ -1,16 +1,15 @@
 <?php
-
 namespace Api;
 
 use Doctrine\ORM\EntityManager;
-use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\View\Model\JsonModel;
-use Zend\Mvc\MvcEvent;
 use User\Service\AuthManager;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\Mvc\Controller\AbstractRestfulController;
+use Zend\Mvc\MvcEvent;
 
 class Module implements ConfigProviderInterface
 {
+
     public function getConfig()
     {
         return include __DIR__ . '/../config/module.config.php';
@@ -20,26 +19,26 @@ class Module implements ConfigProviderInterface
     {
         return [
             'factories' => [
-                Controller\ModelController::class => function($container) {
+                Controller\ModelController::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\ModelController($em);
                 },
-                Controller\CharacterController::class => function($container) {
+                Controller\CharacterController::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\CharacterController($em);
                 },
-                Controller\OrderController::class => function($container) {
+                Controller\OrderController::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\OrderController($em);
                 },
-                Controller\ClientController::class => function($container) {
+                Controller\ClientController::class => function ($container) {
                     $em = $container->get(EntityManager::class);
                     return new Controller\ClientController($em);
-                },
+                }
             ]
         ];
     }
-    
+
     /**
      * This method is called once the MVC bootstrapping is complete.
      */
@@ -54,7 +53,7 @@ class Module implements ConfigProviderInterface
             'onDispatch'
         ], 99);
     }
-    
+
     /**
      * Event listener method for the 'Dispatch' event.
      * We listen to the Dispatch
@@ -75,14 +74,14 @@ class Module implements ConfigProviderInterface
         
         // Get the instance of AuthManager service.
         $authManager = $event->getApplication()
-        ->getServiceManager()
-        ->get(AuthManager::class);
+            ->getServiceManager()
+            ->get(AuthManager::class);
         
         // Execute the access filter on every controller except AuthController
         // (to avoid infinite redirect).
         if (! $authManager->filterAccess($controllerName, $actionName)) {
             throw new \Exception($controllerName);
-            //return new JsonModel(['success' => false, 'reason' => 'unauthorized_access']);
+            // return new JsonModel(['success' => false, 'reason' => 'unauthorized_access']);
         }
     }
 }

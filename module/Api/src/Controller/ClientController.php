@@ -41,6 +41,6 @@ class ClientController extends AbstractRestfulController
         $this->em->persist($client);
         $this->em->flush();
         
-        return new JsonModel(['success' => true, transaction_id => $order->id]);
+        return new JsonModel(['success' => true, 'transaction_id' => $client->id]);
     }
 }
